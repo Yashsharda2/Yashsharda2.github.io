@@ -2,109 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yash Sharda | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <div class="container">
+    <header>
+      <h1>Yash Sharda</h1>
+      <p class="subtitle">2nd-year Electronics & Communication Engineering Student</p>
+    </header>
 
-    <h1>Yash Sharda</h1>
-    <p class="subtitle">2nd-year ECE Student</p>
-
-    <!-- ABOUT -->
     <section>
-      <h2>About me</h2>
+      <h2>About Me</h2>
       <p>
-        Hi, I’m Yash Sharda, a 2nd-year ECE student interested in circuits,
-        FPGA design, and verification. I like working close to the
-        hardware–software boundary and exploring different hardware platforms
-        to understand how low-level systems are built. Currently, I’m working
-        on implementing image processing algorithms on the Vaaman FPGA board,
-        where the pipeline operates on hex-formatted data and performs basic
-        pixel-level operations in hardware, with the processed output intended
-        for display.
-        In my free time, I love reading thriller and psychological books and 
-        exploring new development boards.
+        I am a 2nd-year ECE student specializing in <strong>RTL Design, VLSI architectures, and Digital Communication</strong>. 
+        I am passionate about bridging the hardware-software gap, with a focus on building efficient, 
+        high-throughput systems on FPGA and SoC platforms. Currently, I am exploring hardware-accelerated 
+        digital signal processing and low-level protocol implementation.
       </p>
     </section>
 
-   <!-- PROJECTS -->
-<section>
-  <h2>Projects</h2>
-<div class="project">
-  <h3>FPGA-Based Image Processing Pipeline <span>(In Progress)</span></h3>
-  <ul>
-    <li>Implementing pixel-level image processing in hardware</li>
-    <li>Processing hex-formatted image data on FPGA</li>
-    <li>Basic operations applied directly in hardware</li>
-    <li>Targeting display output after processing</li>
-    <li>Platform: Vaaman FPGA Board</li>
-  </ul>
-  <p>
-    <a href="https://github.com/Yashsharda2/fpga-image-processing" target="_blank">
-      View on GitHub
-    </a>
-  </p>
-</div>
-
-<div class="project">
-  <h3>RP2040 Pico Music Player <span>(Completed)</span></h3>
-  <ul>
-    <li>Built a music player using the RP2040 microcontroller</li>
-    <li>Implemented WAV audio playback using DAC/PWM-based output</li>
-    <li>Interfaced buttons and a rotary encoder for user input, and an SPI display for the UI</li>
-    <li>Handled file reading and playback control in firmware</li>
-  </ul>
-  <p>
-    <a href="https://github.com/Yashsharda2/RP2040_MUSIC_PLAYER" target="_blank">
-      View on GitHub
-    </a>
-  </p>
-</div>
-
-</section>
-
-
-  <!-- SKILLS -->
-<section>
-  <h2>Skills</h2>
-
-  <p><b>Hardware / Digital:</b> Digital Logic, Verilog HDL, FPGA basics, simulation and basic timing analysis</p>
-
-  <p><b>Tools Used:</b> Vivado, Efinity, Git, GitHub, KiCad (basic)</p>
-
-  <p><b>Hardware Used:</b> Vaaman SBC, Zynq-7000 SoC, RP2040</p>
-</section>
-
-
-    <!-- EDUCATION -->
     <section>
-      <h2>Education</h2>
-      <p>
-        B.Tech in Electronics and Communication Engineering <br>
-        2nd Year Undergraduate
-      </p>
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>Real-Time Image Processing Pipeline 
+          <a href="https://github.com/Yashsharda2/fpga-image-processing" target="_blank">[GitHub]</a>
+        </h3>
+        <p>Building a real-time image processing pipeline on Vaaman SBC using Verilog.</p>
+        <ul>
+          <li>Implemented core operations including brightness adjustment, grayscale conversion, and binary thresholding.</li>
+          <li>Designed a <strong>pipelined Sobel edge detector</strong> on a 400-wide grayscale stream using dual line buffers and Manhattan gradient approximation.</li>
+          <li>Integrated <strong>RAH Link</strong> to stream live camera feed directly to the FPGA fabric.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <h3>SPI Communication Protocol Implementation 
+          <a href="https://github.com/Yashsharda2/SPI" target="_blank">[GitHub]</a>
+        </h3>
+        <p>Implemented a high-speed, full-duplex SPI Master controller in Verilog.</p>
+        <ul>
+          <li>Developed a synthesizable SPI state machine, achieving a stable <strong>5MHz SCLK</strong> from a 50MHz PLL-generated system clock.</li>
+          <li>Designed a <strong>physical loopback interface</strong> on the Vaaman board, synchronizing RTL signals with SoC GPIOs.</li>
+          <li>Achieved reliable 8-bit bidirectional data transfers between the FPGA fabric and the RK3399 SoC.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <h3>RP2040 Pico Music Player 
+          <a href="https://github.com/Yashsharda2/RP2040_MUSIC_PLAYER" target="_blank">[GitHub]</a>
+        </h3>
+        <ul>
+          <li>Built a WAV audio player using DAC/PWM-based output on the RP2040.</li>
+          <li>Interfaced rotary encoders and an SPI display for a real-time user interface.</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- CONTACT -->
     <section>
-      <h2>Contact</h2>
-      <p>
-        GitHub:
-        <a href="https://github.com/Yashsharda2" target="_blank">
-          github.com/Yashsharda2
-        </a><br>
-
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/yash-sharda" target="_blank">
-          linkedin.com/in/yash-sharda
-        </a>
-      </p>
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <p><strong>Languages:</strong> Verilog, SystemVerilog, C/C++, Python</p>
+        <p><strong>Tools:</strong> Xilinx Vivado, Efinity, KiCad, Git/GitHub, PulseView</p>
+        <p><strong>Hardware:</strong> Vicharak Vaaman (Trion T120), Zynq-7000 SoC, RP2040, ESP32</p>
+      </div>
     </section>
 
+    <footer>
+      <p>
+        <a href="https://github.com/Yashsharda2" target="_blank">GitHub</a> | 
+        <a href="https://www.linkedin.com/in/yash-sharda" target="_blank">LinkedIn</a>
+      </p>
+    </footer>
   </div>
 
-  <script src="script.js"></script>
 </body>
 </html>
